@@ -1,0 +1,8 @@
+body {
+     margin: 0 !important;
+     background: linear-gradient(90deg, #93d6f2 0, #ebb1e4 64%, rgba(255, 162, 175, .9));
+     font-family: "Montserrat", sans-serif;
+     font-optical-sizing: auto;
+     /* font-weight: <weight>; */
+     font-style: normal;
+}
