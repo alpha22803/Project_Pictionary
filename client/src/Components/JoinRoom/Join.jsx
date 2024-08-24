@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import "./Join.css";
 import { useState } from 'react';
 import { Link } from "react-router-dom";
@@ -20,7 +20,7 @@ export default function Join() {
 
     return (
         <div className='join_main'>
-            <h1 className='joinHead' style={{ fontSize: "5rem" }}>Pictionary</h1>
+            <h1 className='joinHead' style={{ fontSize: "5rem" }}>Draw & Guess</h1>
             <div style={{ position: 'relative', zIndex: 2 }}>
                 <div className='joinDiv'></div>
                 <div style={{ position: 'relative', zIndex: 3, textAlign: "center", paddingTop: "3rem" }}>

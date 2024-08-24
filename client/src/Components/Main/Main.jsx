@@ -1,4 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
+import { useState, useEffect, useRef } from 'react';
 import io from "socket.io-client";
 import { useSearchParams } from "react-router-dom";
 import "./Main.css";
@@ -6,7 +8,6 @@ import Chat from '../Chat/Chat';
 import Players from '../Players/Players';
 import Info from '../InfoBar/Info';
 import axios from 'axios';
-import { toast } from 'react-toastify';
 import backendLink from '../../../backendlink';
 import websocket from '../../../socket';
 export default function Main() {
@@ -21,7 +22,7 @@ export default function Main() {
     const [players, setplayers] = useState([])
     
     
-    const handleOnoad = async(event) => {
+    const handleOnoad = async() => {
         await socket.current.emit("disconnectUser", { name, room });
         window.location.href = "/"
     };
@@ -79,7 +80,7 @@ export default function Main() {
         const canvas = canvasRef.current;
         const context = canvas.getContext('2d');
         context.lineCap = 'round';
-        context.strokeStyle = color;
+        // context.strokeStyle = color;
         context.lineWidth = 5;
         contextRef.current = context;
         return () => {
@@ -165,7 +166,7 @@ export default function Main() {
                                 <input
                                     type="color"
                                     value={color}
-                                    onChange={(e) => setColor(e.target.value)}
+                                    onChange={(e) => {setColor(e.target.value); console.log(e.target.value)}}
                                 />
                                 &nbsp;
                                 <button onClick={clearCanvas}>Clear</button>
@@ -179,4 +180,4 @@ export default function Main() {
             </main>
         </>
     );
-};
+}
